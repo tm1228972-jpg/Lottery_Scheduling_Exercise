@@ -1,0 +1,338 @@
+{
+  "seed": 2024,
+  "equal": {
+    "tickets": [
+      100,
+      100,
+      100
+    ],
+    "expected": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "measured": [
+      {
+        "mean": 0.3331666666666666,
+        "stdev": 0.0012133516482134236,
+        "min": 0.33,
+        "max": 0.33666666666666667
+      },
+      {
+        "mean": 0.33344999999999997,
+        "stdev": 0.0012417505564502316,
+        "min": 0.33166666666666667,
+        "max": 0.3383333333333333
+      },
+      {
+        "mean": 0.3333833333333333,
+        "stdev": 0.0013113817987993577,
+        "min": 0.33,
+        "max": 0.33666666666666667
+      }
+    ],
+    "max_deviation": 0.00016666666666670382,
+    "mean_deviation": 0.00011111111111111738,
+    "compensation": true,
+    "trials": 200,
+    "steps": 600
+  },
+  "weighted": {
+    "tickets": [
+      400,
+      300,
+      200,
+      100
+    ],
+    "expected": [
+      0.4,
+      0.3,
+      0.2,
+      0.1
+    ],
+    "measured": [
+      {
+        "mean": 0.399875,
+        "stdev": 0.00131167301989144,
+        "min": 0.39666666666666667,
+        "max": 0.4033333333333333
+      },
+      {
+        "mean": 0.300125,
+        "stdev": 0.0012011279421166384,
+        "min": 0.2966666666666667,
+        "max": 0.30333333333333334
+      },
+      {
+        "mean": 0.19995000000000002,
+        "stdev": 0.0013113817987993504,
+        "min": 0.19666666666666666,
+        "max": 0.20333333333333334
+      },
+      {
+        "mean": 0.10005000000000001,
+        "stdev": 0.0012123210062612243,
+        "min": 0.09666666666666666,
+        "max": 0.10333333333333333
+      }
+    ],
+    "max_deviation": 0.00012500000000004174,
+    "mean_deviation": 8.750000000000771e-05,
+    "compensation": true,
+    "trials": 200,
+    "steps": 600
+  },
+  "plain": {
+    "tickets": [
+      100,
+      100,
+      100
+    ],
+    "expected": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "measured": [
+      {
+        "mean": 0.335,
+        "stdev": 0.019903238150835882,
+        "min": 0.2816666666666667,
+        "max": 0.3933333333333333
+      },
+      {
+        "mean": 0.33096666666666663,
+        "stdev": 0.02048397747834471,
+        "min": 0.285,
+        "max": 0.38666666666666666
+      },
+      {
+        "mean": 0.33403333333333335,
+        "stdev": 0.0207145681425738,
+        "min": 0.27166666666666667,
+        "max": 0.38
+      }
+    ],
+    "max_deviation": 0.0023666666666666836,
+    "mean_deviation": 0.0015777777777778075,
+    "compensation": false,
+    "trials": 200,
+    "steps": 600
+  },
+  "convergence": {
+    "rows": [
+      {
+        "n": 10,
+        "error": 0.2333333333333333,
+        "compensated": false
+      },
+      {
+        "n": 25,
+        "error": 0.21333333333333332,
+        "compensated": false
+      },
+      {
+        "n": 50,
+        "error": 0.1733333333333333,
+        "compensated": false
+      },
+      {
+        "n": 100,
+        "error": 0.13666666666666666,
+        "compensated": false
+      },
+      {
+        "n": 200,
+        "error": 0.04666666666666669,
+        "compensated": false
+      },
+      {
+        "n": 400,
+        "error": 0.03666666666666668,
+        "compensated": false
+      },
+      {
+        "n": 800,
+        "error": 0.022083333333333288,
+        "compensated": false
+      },
+      {
+        "n": 1600,
+        "error": 0.014791666666666703,
+        "compensated": false
+      },
+      {
+        "n": 3200,
+        "error": 0.010833333333333306,
+        "compensated": false
+      },
+      {
+        "n": 4000,
+        "error": 0.011666666666666659,
+        "compensated": false
+      },
+      {
+        "n": 10,
+        "error": 0.06666666666666671,
+        "compensated": true
+      },
+      {
+        "n": 25,
+        "error": 0.026666666666666672,
+        "compensated": true
+      },
+      {
+        "n": 50,
+        "error": 0.033333333333333326,
+        "compensated": true
+      },
+      {
+        "n": 100,
+        "error": 0.00666666666666671,
+        "compensated": true
+      },
+      {
+        "n": 200,
+        "error": 0.00666666666666671,
+        "compensated": true
+      },
+      {
+        "n": 400,
+        "error": 0.0016666666666667052,
+        "compensated": true
+      },
+      {
+        "n": 800,
+        "error": 0.002083333333333326,
+        "compensated": true
+      },
+      {
+        "n": 1600,
+        "error": 0.0004166666666666763,
+        "compensated": true
+      },
+      {
+        "n": 3200,
+        "error": 0.0002083333333333104,
+        "compensated": true
+      },
+      {
+        "n": 4000,
+        "error": 0.0003333333333332966,
+        "compensated": true
+      }
+    ]
+  },
+  "waiting": {
+    "jobs": 12,
+    "wait_mean": 128.08333333333334,
+    "wait_max": 267,
+    "wait_median": 81.5,
+    "response_mean": 29.083333333333332,
+    "response_max": 75,
+    "makespan": 321,
+    "rows": [
+      {
+        "id": "J0",
+        "len": 9,
+        "tickets": 60,
+        "wait": 43
+      },
+      {
+        "id": "J1",
+        "len": 4,
+        "tickets": 60,
+        "wait": 16
+      },
+      {
+        "id": "J2",
+        "len": 11,
+        "tickets": 60,
+        "wait": 56
+      },
+      {
+        "id": "J3",
+        "len": 6,
+        "tickets": 60,
+        "wait": 16
+      },
+      {
+        "id": "J4",
+        "len": 5,
+        "tickets": 60,
+        "wait": 22
+      },
+      {
+        "id": "J5",
+        "len": 8,
+        "tickets": 60,
+        "wait": 23
+      },
+      {
+        "id": "J6",
+        "len": 36,
+        "tickets": 10,
+        "wait": 245
+      },
+      {
+        "id": "J7",
+        "len": 54,
+        "tickets": 10,
+        "wait": 267
+      },
+      {
+        "id": "J8",
+        "len": 35,
+        "tickets": 10,
+        "wait": 107
+      },
+      {
+        "id": "J9",
+        "len": 60,
+        "tickets": 10,
+        "wait": 251
+      },
+      {
+        "id": "J10",
+        "len": 51,
+        "tickets": 10,
+        "wait": 226
+      },
+      {
+        "id": "J11",
+        "len": 42,
+        "tickets": 10,
+        "wait": 265
+      }
+    ]
+  },
+  "load_control": {
+    "rows": [
+      {
+        "background_tickets": 10,
+        "interactive_share": 0.906,
+        "expected_share": 0.9090909090909091
+      },
+      {
+        "background_tickets": 100,
+        "interactive_share": 0.49475,
+        "expected_share": 0.5
+      },
+      {
+        "background_tickets": 400,
+        "interactive_share": 0.201,
+        "expected_share": 0.2
+      },
+      {
+        "background_tickets": 1600,
+        "interactive_share": 0.0555,
+        "expected_share": 0.058823529411764705
+      },
+      {
+        "background_tickets": 6400,
+        "interactive_share": 0.01225,
+        "expected_share": 0.015384615384615385
+      }
+    ]
+  }
+}

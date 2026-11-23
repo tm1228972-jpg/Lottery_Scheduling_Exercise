@@ -1,0 +1,90 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "name": "fa_page_count",
+      "ok": true,
+      "problems": [],
+      "info": "40 pages"
+    },
+    {
+      "name": "en_page_count",
+      "ok": true,
+      "problems": [],
+      "info": "41 pages"
+    },
+    {
+      "name": "fa_text_integrity",
+      "ok": true,
+      "problems": [],
+      "info": "63162 chars"
+    },
+    {
+      "name": "en_text_integrity",
+      "ok": true,
+      "problems": [],
+      "info": "68363 chars"
+    },
+    {
+      "name": "fa_figures",
+      "ok": true,
+      "problems": [],
+      "info": "32"
+    },
+    {
+      "name": "fa_tables",
+      "ok": true,
+      "problems": [],
+      "info": "43"
+    },
+    {
+      "name": "fa_listings",
+      "ok": true,
+      "problems": [],
+      "info": "17"
+    },
+    {
+      "name": "fa_toc",
+      "ok": true,
+      "problems": [],
+      "info": ""
+    },
+    {
+      "name": "fa_gantt",
+      "ok": true,
+      "problems": [],
+      "info": ""
+    },
+    {
+      "name": "fa_words",
+      "ok": true,
+      "problems": [],
+      "info": ""
+    },
+    {
+      "name": "docx_fa",
+      "ok": true,
+      "problems": [],
+      "info": ""
+    },
+    {
+      "name": "docx_en",
+      "ok": true,
+      "problems": [],
+      "info": ""
+    },
+    {
+      "name": "slides",
+      "ok": true,
+      "problems": [],
+      "info": "37 slides"
+    },
+    {
+      "name": "page_gaps",
+      "ok": true,
+      "problems": [],
+      "info": "no blank bands"
+    }
+  ],
+  "assignment": "02"
+}

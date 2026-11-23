@@ -1,0 +1,17 @@
+test_compensation_reduces_share_error (__main__.TestCompensation.test_compensation_reduces_share_error) ... ok
+test_weights_stay_non_negative (__main__.TestCompensation.test_weights_stay_non_negative) ... ok
+test_all_zero_tickets_rejected (__main__.TestSelection.test_all_zero_tickets_rejected) ... ok
+test_deterministic_for_same_seed (__main__.TestSelection.test_deterministic_for_same_seed) ... ok
+test_negative_tickets_rejected (__main__.TestSelection.test_negative_tickets_rejected) ... ok
+test_probability_matches_tickets (__main__.TestSelection.test_probability_matches_tickets) ... ok
+test_total_wins_equals_steps (__main__.TestSelection.test_total_wins_equals_steps) ... ok
+test_zero_ticket_client_never_wins_alone (__main__.TestSelection.test_zero_ticket_client_never_wins_alone) ... ok
+test_convergence_monotone_trend (__main__.TestStatistics.test_convergence_monotone_trend) ... ok
+test_expected_share_math (__main__.TestStatistics.test_expected_share_math) ... ok
+test_load_control_decreases (__main__.TestStatistics.test_load_control_decreases) ... ok
+test_waiting_experiment_shapes (__main__.TestStatistics.test_waiting_experiment_shapes) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.345s
+
+OK

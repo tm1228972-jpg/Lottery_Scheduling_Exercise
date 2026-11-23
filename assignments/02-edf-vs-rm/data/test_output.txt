@@ -1,0 +1,20 @@
+test_default_deadline_equals_period (__main__.TestModel.test_default_deadline_equals_period) ... ok
+test_hyperperiod (__main__.TestModel.test_hyperperiod) ... ok
+test_invalid_wcet (__main__.TestModel.test_invalid_wcet) ... ok
+test_utilisation (__main__.TestModel.test_utilisation) ... ok
+test_above_bound_can_still_be_feasible (__main__.TestSimulatorAgreesWithRTA.test_above_bound_can_still_be_feasible) ... ok
+test_determinism (__main__.TestSimulatorAgreesWithRTA.test_determinism) ... ok
+test_edf_no_miss_below_utilisation_one (__main__.TestSimulatorAgreesWithRTA.test_edf_no_miss_below_utilisation_one) ... ok
+test_rm_can_miss_above_bound (__main__.TestSimulatorAgreesWithRTA.test_rm_can_miss_above_bound) ... ok
+test_rm_matches_rta_on_random_sets (__main__.TestSimulatorAgreesWithRTA.test_rm_matches_rta_on_random_sets)
+Whenever RTA says schedulable, RM simulation must miss no deadline. ... ok
+test_timeline_length (__main__.TestSimulatorAgreesWithRTA.test_timeline_length) ... ok
+test_rm_bound_formula (__main__.TestTheory.test_rm_bound_formula) ... ok
+test_rm_bound_limit_is_ln2 (__main__.TestTheory.test_rm_bound_limit_is_ln2) ... ok
+test_rta_feasible_set (__main__.TestTheory.test_rta_feasible_set) ... ok
+test_rta_infeasible_set (__main__.TestTheory.test_rta_infeasible_set) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.488s
+
+OK

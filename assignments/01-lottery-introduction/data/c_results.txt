@@ -1,0 +1,11 @@
+seed=2024 trials=200
+mode     clients    max_error    worst_share 
+plain    3          0.023208     0.063333    
+compens. 3          0.001150     0.003333    
+
+weighted run (100000 draws)
+  A   tickets= 400 wins= 40000 share=0.4000
+  B   tickets= 300 wins= 30000 share=0.3000
+  C   tickets= 200 wins= 20000 share=0.2000
+  D   tickets= 100 wins= 10000 share=0.1000
+  max share error = 0.000000
