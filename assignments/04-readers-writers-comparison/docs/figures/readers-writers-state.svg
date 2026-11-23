@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+<title id="title">Readers-writers mutual exclusion states</title>
+<desc id="desc">Readers may overlap, while a writer owns the shared resource exclusively.</desc>
+<defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M1 1 L11 6 L1 11" fill="none" stroke="#64748B" stroke-width="2"/></marker></defs>
+<rect width="1200" height="560" fill="#F8FAFC"/>
+<text x="55" y="55" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" font-weight="700" fill="#14243A">Readers–writers: safe access states</text>
+<text x="55" y="88" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" fill="#64748B">The shared data has two legal modes: a reader group, or one exclusive writer.</text>
+<rect x="70" y="145" width="485" height="300" rx="22" fill="#EAF5F4" stroke="#168C8C" stroke-width="3"/>
+<text x="312" y="190" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#14243A">READ MODE</text>
+<text x="312" y="222" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#64748B">one or more readers may coexist</text>
+<rect x="125" y="270" width="110" height="72" rx="16" fill="#4776A8"/><text x="180" y="315" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" fill="white">R1</text>
+<rect x="258" y="270" width="110" height="72" rx="16" fill="#4776A8"/><text x="313" y="315" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" fill="white">R2</text>
+<rect x="391" y="270" width="110" height="72" rx="16" fill="#4776A8"/><text x="446" y="315" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" fill="white">R3</text>
+<text x="312" y="390" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#25364B">active_readers ≥ 1 · writer_active = false</text>
+<rect x="645" y="145" width="485" height="300" rx="22" fill="#FFF0EC" stroke="#DF6B63" stroke-width="3"/>
+<text x="887" y="190" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#14243A">WRITE MODE</text>
+<text x="887" y="222" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#64748B">one writer owns the shared data</text>
+<rect x="832" y="270" width="110" height="72" rx="16" fill="#DF6B63"/><text x="887" y="315" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" fill="white">W1</text>
+<text x="887" y="390" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#25364B">active_readers = 0 · one writer only</text>
+<path d="M555 295 L645 295" stroke="#64748B" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M645 365 L555 365" stroke="#64748B" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="600" y="270" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#64748B">queue</text>
+<text x="600" y="405" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#64748B">release</text>
+<text x="600" y="500" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#64748B">Safety invariant: never allow a reader and writer, or two writers, to overlap.</text>
+</svg>

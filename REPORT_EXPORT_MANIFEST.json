@@ -1,0 +1,146 @@
+{
+  "target_pdf_pages_for_exercises": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06"
+  ],
+  "target_pdf_pages": 40,
+  "notice": "All exports are short working drafts and remain below the approximately 40-page target; none is submission-ready.",
+  "documents": [
+    {
+      "exercise": "01",
+      "language": "fa",
+      "source": "assignments/01-lottery-introduction/docs/reports/report-fa.md",
+      "docx": "assignments/01-lottery-introduction/docs/reports/report-fa.docx",
+      "pdf": "assignments/01-lottery-introduction/docs/reports/report-fa.pdf",
+      "pdf_pages": 4,
+      "page_target": 40,
+      "meets_page_target": false,
+      "submission_ready": false
+    },
+    {
+      "exercise": "01",
+      "language": "en",
+      "source": "assignments/01-lottery-introduction/docs/reports/report-en.md",
+      "docx": "assignments/01-lottery-introduction/docs/reports/report-en.docx",
+      "pdf": "assignments/01-lottery-introduction/docs/reports/report-en.pdf",
+      "pdf_pages": 4,
+      "page_target": 40,
+      "meets_page_target": false,
+      "submission_ready": false
+    },
+    {
+      "exercise": "02",
+      "language": "fa",
+      "source": "assignments/02-edf-rm-comparison/docs/reports/report-fa.md",
+      "docx": "assignments/02-edf-rm-comparison/docs/reports/report-fa.docx",
+      "pdf": "assignments/02-edf-rm-comparison/docs/reports/report-fa.pdf",
+      "pdf_pages": 4,
+      "page_target": 40,
+      "meets_page_target": false,
+      "submission_ready": false
+    },
+    {
+      "exercise": "02",
+      "language": "en",
+      "source": "assignments/02-edf-rm-comparison/docs/reports/report-en.md",
+      "docx": "assignments/02-edf-rm-comparison/docs/reports/report-en.docx",
+      "pdf": "assignments/02-edf-rm-comparison/docs/reports/report-en.pdf",
+      "pdf_pages": 4,
+      "page_target": 40,
+      "meets_page_target": false,
+      "submission_ready": false
+    },
+    {
+      "exercise": "03",
+      "language": "fa",
+      "source": "assignments/03-edf-rm-three-processes/docs/reports/report-fa.md",
+      "docx": "assignments/03-edf-rm-three-processes/docs/reports/report-fa.docx",
+      "pdf": "assignments/03-edf-rm-three-processes/docs/reports/report-fa.pdf",
+      "pdf_pages": 4,
+      "page_target": 40,
+      "meets_page_target": false,
+      "submission_ready": false
+    },
+    {
+      "exercise": "03",
+      "language": "en",
+      "source": "assignments/03-edf-rm-three-processes/docs/reports/report-en.md",
+      "docx": "assignments/03-edf-rm-three-processes/docs/reports/report-en.docx",
+      "pdf": "assignments/03-edf-rm-three-processes/docs/reports/report-en.pdf",
+      "pdf_pages": 5,
+      "page_target": 40,
+      "meets_page_target": false,
+      "submission_ready": false
+    },
+    {
+      "exercise": "04",
+      "language": "fa",
+      "source": "assignments/04-readers-writers-comparison/docs/reports/report-fa.md",
+      "docx": "assignments/04-readers-writers-comparison/docs/reports/report-fa.docx",
+      "pdf": "assignments/04-readers-writers-comparison/docs/reports/report-fa.pdf",
+      "pdf_pages": 5,
+      "page_target": 40,
+      "meets_page_target": false,
+      "submission_ready": false
+    },
+    {
+      "exercise": "04",
+      "language": "en",
+      "source": "assignments/04-readers-writers-comparison/docs/reports/report-en.md",
+      "docx": "assignments/04-readers-writers-comparison/docs/reports/report-en.docx",
+      "pdf": "assignments/04-readers-writers-comparison/docs/reports/report-en.pdf",
+      "pdf_pages": 5,
+      "page_target": 40,
+      "meets_page_target": false,
+      "submission_ready": false
+    },
+    {
+      "exercise": "05",
+      "language": "fa",
+      "source": "assignments/05-lottery-scheduling-clip/docs/reports/report-fa.md",
+      "docx": "assignments/05-lottery-scheduling-clip/docs/reports/report-fa.docx",
+      "pdf": "assignments/05-lottery-scheduling-clip/docs/reports/report-fa.pdf",
+      "pdf_pages": 1,
+      "page_target": 40,
+      "meets_page_target": false,
+      "submission_ready": false
+    },
+    {
+      "exercise": "05",
+      "language": "en",
+      "source": "assignments/05-lottery-scheduling-clip/docs/reports/report-en.md",
+      "docx": "assignments/05-lottery-scheduling-clip/docs/reports/report-en.docx",
+      "pdf": "assignments/05-lottery-scheduling-clip/docs/reports/report-en.pdf",
+      "pdf_pages": 1,
+      "page_target": 40,
+      "meets_page_target": false,
+      "submission_ready": false
+    },
+    {
+      "exercise": "06",
+      "language": "fa",
+      "source": "assignments/06-lottery-seminar/docs/article-fa.md",
+      "docx": "assignments/06-lottery-seminar/docs/reports/article-fa.docx",
+      "pdf": "assignments/06-lottery-seminar/docs/reports/article-fa.pdf",
+      "pdf_pages": 3,
+      "page_target": 40,
+      "meets_page_target": false,
+      "submission_ready": false
+    },
+    {
+      "exercise": "06",
+      "language": "en",
+      "source": "assignments/06-lottery-seminar/docs/article-en.md",
+      "docx": "assignments/06-lottery-seminar/docs/reports/article-en.docx",
+      "pdf": "assignments/06-lottery-seminar/docs/reports/article-en.pdf",
+      "pdf_pages": 4,
+      "page_target": 40,
+      "meets_page_target": false,
+      "submission_ready": false
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+<title id="title">Scheduling theorem boundaries</title>
+<desc id="desc">The Lottery probability and EDF and RM utilization bounds have different assumptions and meanings.</desc>
+<rect width="1200" height="560" fill="#F8FAFC"/>
+<text x="55" y="55" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" font-weight="700" fill="#14243A">Guarantees are conditional on their model</text>
+<text x="55" y="88" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" fill="#64748B">Probability, sufficient bounds, and feasibility conditions answer different questions.</text>
+<line x1="145" y1="180" x2="145" y2="425" stroke="#CBD5E1" stroke-width="4"/>
+<circle cx="145" cy="205" r="13" fill="#168C8C"/><circle cx="145" cy="302" r="13" fill="#4776A8"/><circle cx="145" cy="400" r="13" fill="#F2B84B"/>
+<rect x="190" y="155" width="910" height="98" rx="18" fill="#EAF5F4" stroke="#168C8C" stroke-width="2"/>
+<text x="225" y="195" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#14243A">Lottery · Pᵢ = tᵢ/T per independent draw</text>
+<text x="225" y="228" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#25364B">An expected proportion; no finite waiting-time or hard-deadline guarantee.</text>
+<rect x="190" y="255" width="910" height="98" rx="18" fill="#EDF3F9" stroke="#4776A8" stroke-width="2"/>
+<text x="225" y="295" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#14243A">EDF · U ≤ 1 under ideal implicit-deadline uniprocessor assumptions</text>
+<text x="225" y="328" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#25364B">A schedulability condition, not a statement about arbitrary overload or blocking.</text>
+<rect x="190" y="355" width="910" height="98" rx="18" fill="#FFF5DF" stroke="#E6C56C" stroke-width="2"/>
+<text x="225" y="395" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#14243A">RM · U ≤ n(2^(1/n)−1)</text>
+<text x="225" y="428" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#25364B">A sufficient utilization bound; exceeding it does not prove unschedulability.</text>
+<text x="600" y="510" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#64748B">Assumptions commonly include independent tasks, preemption, one CPU, Dᵢ=Tᵢ, and zero overhead.</text>
+</svg>

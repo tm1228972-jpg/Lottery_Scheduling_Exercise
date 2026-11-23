@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+<title id="title">Lottery EDF RM scheduling objectives</title>
+<desc id="desc">The three schedulers use different decision rules and optimize different contracts.</desc>
+<rect width="1200" height="560" fill="#F8FAFC"/>
+<text x="55" y="55" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" font-weight="700" fill="#14243A">Three schedulers, three decision contracts</text>
+<text x="55" y="88" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" fill="#64748B">Do not treat proportional share and deadline feasibility as interchangeable objectives.</text>
+<g><rect x="55" y="145" width="340" height="305" rx="22" fill="#FFFFFF" stroke="#168C8C" stroke-width="3"/>
+<rect x="55" y="145" width="340" height="62" rx="20" fill="#168C8C"/><text x="225" y="185" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="700" fill="white">LOTTERY</text>
+<text x="85" y="255" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#14243A">Decision</text><text x="85" y="286" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" fill="#25364B">uniform winning ticket</text>
+<text x="85" y="333" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#14243A">Contract</text><text x="85" y="364" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" fill="#25364B">expected share ∝ tickets</text>
+<text x="85" y="411" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#DF6B63">no hard deadline bound</text></g>
+<g><rect x="430" y="145" width="340" height="305" rx="22" fill="#FFFFFF" stroke="#4776A8" stroke-width="3"/>
+<rect x="430" y="145" width="340" height="62" rx="20" fill="#4776A8"/><text x="600" y="185" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="700" fill="white">EDF</text>
+<text x="460" y="255" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#14243A">Decision</text><text x="460" y="286" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" fill="#25364B">earliest absolute deadline</text>
+<text x="460" y="333" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#14243A">Contract</text><text x="460" y="364" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" fill="#25364B">deadline feasibility in model</text>
+<text x="460" y="411" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#64748B">dynamic job priority</text></g>
+<g><rect x="805" y="145" width="340" height="305" rx="22" fill="#FFFFFF" stroke="#F2B84B" stroke-width="3"/>
+<rect x="805" y="145" width="340" height="62" rx="20" fill="#F2B84B"/><text x="975" y="185" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="700" fill="#14243A">RM</text>
+<text x="835" y="255" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#14243A">Decision</text><text x="835" y="286" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" fill="#25364B">shortest period gets priority</text>
+<text x="835" y="333" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#14243A">Contract</text><text x="835" y="364" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" fill="#25364B">fixed-priority feasibility</text>
+<text x="835" y="411" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#64748B">fixed task priority</text></g>
+<text x="600" y="510" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#64748B">The suitable policy depends on whether the system promises share or deadline completion.</text>
+</svg>
