@@ -33,7 +33,13 @@ Seed: `8a71ba01619b8eb5dbb6efaf55b2796ebef640bd`
 - Fairness-age smoke check passed for **1,000 seeded configurations** (`N=3..10`, thresholds `1..5`). This checks the stated discrete simulator model; it is not a real-time concurrency proof.
 - `.venv/bin/python tools/generate_figures.py` — generated four structural SVGs, two data-chart SVGs, two PNG charts, and two source CSVs.
 - XML parsing passed for all six SVG files; Pillow verified both PNG files; all relative Markdown links and assignment README image paths resolve.
-- `git diff --check` passed before commit.
+- `git diff --cached --check` passed before the implementation commit.
+
+## Commit and push record
+
+- Implementation commit: `e05c741` — `Add Lottery and dining philosophers teaching materials`.
+- Pushed successfully to `origin/arena/4447560a-lottery-scheduling-exercise`; GitHub created the current work branch.
+- No existing assignment branch was pushed to, changed, merged, or closed. The final index/progress-link update is recorded in the current branch history and its exact commit is reported in the handoff.
 
 ## Not completed / remaining
 

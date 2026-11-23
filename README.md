@@ -35,6 +35,7 @@ The generator uses fixed seeds and writes CSV traces beside the figures. The str
 - [Exercise 1: Lottery Scheduling](assignments/01-lottery-introduction/README.md)
 - [Exercise 8: Lottery scheduling and dining philosophers](assignments/08-lottery-dining-philosophers/README.md)
 - [Project index and branch audit](PROJECT_INDEX.md)
+- [Full audit of the six existing assignment branches](docs/remote-branch-audit.md)
 - [Audit of the supplied assignment checklist image](docs/assignment-screenshot-audit.md)
 - [Progress, validation, and outstanding requirements](PROJECT_PROGRESS.md)
 
