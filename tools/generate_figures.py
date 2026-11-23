@@ -15,7 +15,16 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from lottery_lab import DiningPhilosophers, LotteryScheduler, Process  # noqa: E402
+from lottery_lab import (
+    DiningPhilosophers,
+    LotteryScheduler,
+    PeriodicTask,
+    Process,
+    hyperperiod,
+    rm_utilization_bound,
+    simulate_schedule,
+    utilization,
+)  # noqa: E402
 
 NAVY = "#14243A"
 INK = "#25364B"
@@ -29,13 +38,20 @@ WHITE = "#FFFFFF"
 FONT = "Inter, DejaVu Sans, Arial, sans-serif"
 
 EX1 = ROOT / "assignments/01-lottery-introduction"
+EX3 = ROOT / "assignments/03-edf-rm-three-processes"
 EX8 = ROOT / "assignments/08-lottery-dining-philosophers"
 
 
-def svg_document(title: str, width: int, height: int, body: str) -> str:
+def svg_document(
+    title: str,
+    width: int,
+    height: int,
+    body: str,
+    description: str = "Educational diagram for the Lottery Scheduling Exercise.",
+) -> str:
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">
 <title id="title">{title}</title>
-<desc id="desc">Educational diagram for the Lottery Scheduling Exercise.</desc>
+<desc id="desc">{description}</desc>
 <defs>
   <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L10,6 L1,11" fill="none" stroke="{MUTED}" stroke-width="1.8"/></marker>
   <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#14243A" flood-opacity="0.10"/></filter>
@@ -351,8 +367,128 @@ def make_data_charts() -> None:
     render_philosopher_png(fig8 / "philosopher-gantt.png", trace, 20, seed)
 
 
+def make_realtime_schedule_artifacts() -> None:
+    """Generate EDF/RM schedule data and a Gantt chart from the branch task set."""
+    tasks = [
+        PeriodicTask("P1", execution=1, period=4),
+        PeriodicTask("P2", execution=1, period=5),
+        PeriodicTask("P3", execution=2, period=10),
+    ]
+    horizon = hyperperiod(tasks)
+    results = [simulate_schedule(tasks, policy, horizon) for policy in ("EDF", "RM")]
+    output_dir = EX3 / "outputs"
+    figure_dir = EX3 / "docs/figures"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    figure_dir.mkdir(parents=True, exist_ok=True)
+
+    with (output_dir / "edf-rm-schedule.csv").open("w", newline="", encoding="utf-8") as stream:
+        writer = csv.writer(stream, lineterminator="\n")
+        writer.writerow(["policy", "start", "end", "task", "job_number", "absolute_deadline"])
+        for result in results:
+            for segment in result.segments:
+                writer.writerow([
+                    result.policy,
+                    segment.start,
+                    segment.end,
+                    segment.task_name or "IDLE",
+                    "" if segment.job_number is None else segment.job_number,
+                    "" if segment.absolute_deadline is None else segment.absolute_deadline,
+                ])
+    with (output_dir / "analysis-summary.csv").open("w", newline="", encoding="utf-8") as stream:
+        writer = csv.writer(stream, lineterminator="\n")
+        writer.writerow(["hyperperiod", "utilization", "rm_sufficient_bound", "edf_misses", "rm_misses"])
+        writer.writerow([
+            horizon,
+            f"{utilization(tasks):.8f}",
+            f"{rm_utilization_bound(len(tasks)):.8f}",
+            len(results[0].misses),
+            len(results[1].misses),
+        ])
+
+    colors = {"P1": BLUE, "P2": TEAL, "P3": GOLD, None: "#CBD5E1"}
+    width, height = 1280, 550
+    left, plot_width = 180, 980
+    lane_y = {"EDF": 220, "RM": 330}
+    lane_h = 58
+    body = f'<text x="55" y="55" font-family="{FONT}" font-size="30" font-weight="700" fill="{NAVY}">EDF and RM schedule · supplied three-task set</text>'
+    body += f'<text x="55" y="91" font-family="{FONT}" font-size="17" fill="{MUTED}">H={horizon} · U={utilization(tasks):.2f} · RM sufficient bound={rm_utilization_bound(3):.3f} · no deadline misses</text>'
+    body += f'<text x="55" y="121" font-family="{FONT}" font-size="15" fill="{MUTED}">Preemptive uniprocessor · integer time · implicit deadlines · zero context-switch cost</text>'
+    for tick in range(horizon + 1):
+        x = left + plot_width * tick / horizon
+        body += f'<line x1="{x:.1f}" y1="185" x2="{x:.1f}" y2="405" stroke="#D9E1EA" stroke-width="1"/>'
+        body += f'<text x="{x:.1f}" y="175" text-anchor="middle" font-family="{FONT}" font-size="12" fill="{MUTED}">{tick}</text>'
+    for result in results:
+        y = lane_y[result.policy]
+        body += f'<text x="125" y="{y + 36}" text-anchor="end" font-family="{FONT}" font-size="20" font-weight="700" fill="{NAVY}">{result.policy}</text>'
+        for segment in result.segments:
+            x = left + plot_width * segment.start / horizon
+            seg_width = plot_width * (segment.end - segment.start) / horizon
+            color = colors[segment.task_name]
+            body += f'<rect x="{x:.1f}" y="{y}" width="{seg_width:.1f}" height="{lane_h}" fill="{color}" stroke="#FFFFFF" stroke-width="2"/>'
+            if segment.task_name:
+                label = f"{segment.task_name} J{segment.job_number}"
+                text_color = NAVY if segment.task_name == "P3" else WHITE
+                body += f'<text x="{x + seg_width / 2:.1f}" y="{y + 36}" text-anchor="middle" font-family="{FONT}" font-size="14" font-weight="700" fill="{text_color}">{label}</text>'
+            elif segment.end - segment.start >= 2:
+                body += f'<text x="{x + seg_width / 2:.1f}" y="{y + 36}" text-anchor="middle" font-family="{FONT}" font-size="14" fill="{INK}">idle</text>'
+    body += f'<rect x="55" y="455" width="1170" height="58" rx="14" fill="#F1F5F9"/>'
+    legend_x = 85
+    for task_name in ("P1", "P2", "P3", None):
+        label = "Idle" if task_name is None else task_name
+        color = colors[task_name]
+        body += f'<rect x="{legend_x}" y="475" width="20" height="18" rx="3" fill="{color}"/>'
+        body += f'<text x="{legend_x + 28}" y="490" font-family="{FONT}" font-size="15" fill="{INK}">{label}</text>'
+        legend_x += 150
+    svg_path = figure_dir / "edf-rm-gantt.svg"
+    svg_path.write_text(
+        svg_document(
+            "EDF and RM Gantt schedule for three tasks",
+            width,
+            height,
+            body,
+            "Actual schedule produced by the repository simulator for the periodic task set documented in Exercise 3.",
+        ),
+        encoding="utf-8",
+    )
+
+    from PIL import Image, ImageDraw
+    regular, bold, small, title_font = _load_fonts()
+    image = Image.new("RGB", (width, height), "#F8FAFC")
+    draw = ImageDraw.Draw(image)
+    draw.text((55, 38), "EDF and RM schedule · supplied three-task set", font=title_font, fill=NAVY)
+    draw.text((55, 82), f"H={horizon} · U={utilization(tasks):.2f} · RM sufficient bound={rm_utilization_bound(3):.3f} · no deadline misses", font=regular, fill=MUTED)
+    draw.text((55, 114), "Preemptive uniprocessor · integer time · implicit deadlines · zero context-switch cost", font=small, fill=MUTED)
+    for tick in range(horizon + 1):
+        x = left + plot_width * tick / horizon
+        draw.line((x, 185, x, 405), fill="#D9E1EA", width=1)
+        draw.text((x - 5, 165), str(tick), font=small, fill=MUTED)
+    for result in results:
+        y = lane_y[result.policy]
+        draw.text((65, y + 15), result.policy, font=bold, fill=NAVY)
+        for segment in result.segments:
+            x1 = left + plot_width * segment.start / horizon
+            x2 = left + plot_width * segment.end / horizon
+            color = colors[segment.task_name]
+            draw.rectangle((x1, y, x2, y + lane_h), fill=color, outline=WHITE, width=2)
+            if segment.task_name:
+                label = f"{segment.task_name} J{segment.job_number}"
+                draw.text((x1 + 4, y + 19), label, font=small, fill=NAVY if segment.task_name == "P3" else WHITE)
+            elif segment.end - segment.start >= 2:
+                draw.text((x1 + (x2 - x1) / 2 - 16, y + 19), "idle", font=small, fill=INK)
+    draw.rounded_rectangle((55, 455, 1225, 513), radius=14, fill="#F1F5F9")
+    legend_x = 85
+    for task_name in ("P1", "P2", "P3", None):
+        label = "Idle" if task_name is None else task_name
+        color = colors[task_name]
+        draw.rounded_rectangle((legend_x, 475, legend_x + 20, 493), radius=3, fill=color)
+        draw.text((legend_x + 28, 474), label, font=small, fill=INK)
+        legend_x += 150
+    image.save(figure_dir / "edf-rm-gantt.png", format="PNG", optimize=True)
+
+
 def main() -> None:
     (EX1 / "docs/figures").mkdir(parents=True, exist_ok=True)
+    (EX3 / "docs/figures").mkdir(parents=True, exist_ok=True)
     (EX8 / "docs/figures").mkdir(parents=True, exist_ok=True)
     outputs = {
         EX1 / "docs/figures/lottery-pipeline.svg": make_lottery_pipeline(),
@@ -362,8 +498,9 @@ def main() -> None:
     }
     for path, contents in outputs.items():
         path.write_text(contents, encoding="utf-8")
+    make_realtime_schedule_artifacts()
     make_data_charts()
-    print("Generated 4 structural SVG diagrams, 2 simulation CSVs, and available PNG charts.")
+    print("Generated structural diagrams and three data-backed schedule/frequency chart sets with CSV sources.")
 
 
 if __name__ == "__main__":

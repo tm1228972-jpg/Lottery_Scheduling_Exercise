@@ -1,46 +1,63 @@
-# Lottery Scheduling Exercise — repository status and reference work
+# Lottery Scheduling Exercise — six-assignment working repository
 
-> **Status (2026-11-23):** the supplied base commit in this worktree contained only this README. A subsequent remote-branch audit found the six assignment branches listed below; each has three root-level Markdown files, but no standalone implementation tree, tests, `docs/`, figures, output data, Word files, or PDFs. Exercise 5 contains an inline Python snippet in its report. This branch adds a reproducible teaching model for the Lottery Scheduling introduction and the newly requested dining-philosophers analysis; it does **not** claim that the other assignments or the requested 40-page bilingual reports are complete.
+> **Status (2026-11-23):** The current Arena branch contains working drafts and supporting artifacts for the six assignments transcribed from the supplied checklist. It is not a finished submission. The requested long-form bilingual reports are **not complete**: the current Word/PDF exports are short technical drafts, not approximately 40-page deliverables. The video is 2:12 and silent with Persian/English captions. Seminar-rule compliance cannot be confirmed without the readable rule sheet.
 
-## What is in this branch
+## Six requested assignments
 
-- **Exercise 1 — Lottery Scheduling:** an explicit weighted-draw simulator, tests, a runnable example, algorithm diagrams, and a frequency chart generated from 50,000 actual seeded draws.
-- **Exercise 8 — Dining Philosophers:** a safe atomic-admission model, lottery selection among non-conflicting philosophers, an optional age-based fairness override, tests, a round trace, and a Gantt-style chart generated from the simulator.
-- **Repository audit and task map:** [`PROJECT_INDEX.md`](PROJECT_INDEX.md) and [`PROJECT_PROGRESS.md`](PROJECT_PROGRESS.md) record which materials were and were not present.
-
-The algorithm code is a **teaching model**, not an operating-system scheduler or a production concurrent program. The reports distinguish mathematical properties from finite seeded demonstrations; sample results are never presented as guarantees.
+1. **Lottery Scheduling introduction:** teaching simulator, bilingual technical drafts, flow diagrams, seeded frequency data, and report exports under [`assignments/01-lottery-introduction/`](assignments/01-lottery-introduction/README.md).
+2. **Lottery vs. EDF/RM comparison:** bilingual comparison drafts, diagrams, and references under [`assignments/02-edf-rm-comparison/`](assignments/02-edf-rm-comparison/README.md).
+3. **Three-task EDF/RM schedule by hand:** explicit event-by-event derivation, deadline audit, Gantt chart, CSV, simulator cross-check, and bibliography under [`assignments/03-edf-rm-three-processes/`](assignments/03-edf-rm-three-processes/README.md).
+4. **Dekker, Peterson, semaphore, and monitor comparison:** bilingual technical drafts, a tested readers-writers monitor, diagrams, and source audit under [`assignments/04-readers-writers-comparison/`](assignments/04-readers-writers-comparison/README.md).
+5. **Lottery Scheduling clip:** [`132-second bilingual captioned MP4`](assignments/05-lottery-scheduling-clip/outputs/lottery-scheduling-comparison.mp4), separate narration scripts, sources, and technical notes under [`assignments/05-lottery-scheduling-clip/`](assignments/05-lottery-scheduling-clip/README.md). The MP4 has no audio track.
+6. **Article and seminar:** bilingual article drafts, agenda/speaker notes, a 10-slide editable PPTX, and provisional Word/PDF exports under [`assignments/06-lottery-seminar/`](assignments/06-lottery-seminar/README.md). The detailed seminar rules are not available in a readable form; no compliance with unseen rules is claimed.
 
 ## Quick start
 
-Requires Python 3.11 or later. The scheduler and tests use only the Python standard library.
+Requires Python 3.11 or later.
 
 ```bash
 python -m pip install -e .
-python examples/run_lottery_demo.py
-python examples/run_philosophers_demo.py
 python -m unittest discover -s tests -v
+python examples/run_lottery_demo.py
+python examples/run_philosophers_demo.py  # supplemental, outside the six-task checklist
 ```
 
-To regenerate the data-driven PNG charts, install the optional Pillow dependency and run the figure generator:
+Regenerate CSVs and figures:
 
 ```bash
 python -m pip install -e ".[docs]"
 python tools/generate_figures.py
 ```
 
-The generator uses fixed seeds and writes CSV traces beside the figures. The structural diagrams are SVG; the observed-frequency and simulated-meal charts are PNG. All chart data can be inspected in the corresponding `outputs/` directory.
+Build the silent Exercise 5 clip and 10-slide seminar deck:
 
-## Start here
+```bash
+python -m pip install -e ".[media,seminar]"
+python tools/build_exercise5_video.py
+python tools/build_seminar_deck.py
+```
 
-- [Exercise 1: Lottery Scheduling](assignments/01-lottery-introduction/README.md)
-- [Exercise 8: Lottery scheduling and dining philosophers](assignments/08-lottery-dining-philosophers/README.md)
-- [Project index and branch audit](PROJECT_INDEX.md)
-- [Full audit of the six existing assignment branches](docs/remote-branch-audit.md)
-- [Audit of the supplied assignment checklist image](docs/assignment-screenshot-audit.md)
-- [Progress, validation, and outstanding requirements](PROJECT_PROGRESS.md)
+Export the current Markdown working drafts to DOCX/PDF:
 
-## Scope and honesty note
+```bash
+python -m pip install -e ".[reports]"
+python tools/build_reports.py
+```
 
-The seed README names six assignment branches, and all six are present on the GitHub remote. Their contents were read and audited, but left unchanged; the audit is in [`docs/remote-branch-audit.md`](docs/remote-branch-audit.md). The request refers to seven earlier exercises, while the image and seed README identify six; no title or source for Exercise 7 is available. This work remains on the active branch, and no other branch was edited. See the index for exact branch names and gaps.
+`REPORT_EXPORT_MANIFEST.json` records the page counts. Every current report/article export is explicitly compared with the approximately 40-page target; all are short drafts, none meets the target, and none is described as a final submission.
 
-There were no existing reports to improve. The included Markdown technical notes are evidence-based starter reports for the two implemented topics; they do **not** meet the requested 35–40/40+ page Word/PDF target. Producing pages by padding or inventing experimental claims would contradict the request to use only real content. The remaining source materials, the unnamed Exercise 7, and instructor-approved report content are needed before that deliverable can be completed responsibly.
+## Research and project records
+
+- [`PROJECT_INDEX.md`](PROJECT_INDEX.md): six-exercise map and current branch status.
+- [`PROJECT_PROGRESS.md`](PROJECT_PROGRESS.md): implemented work, validation, remaining requirements, and push record.
+- [`docs/assignment-screenshot-audit.md`](docs/assignment-screenshot-audit.md): cautious transcription of the checklist and scope clarifications.
+- [`docs/remote-branch-audit.md`](docs/remote-branch-audit.md): historical audit of the six remote assignment branches; these branches have not been updated in this work.
+- [`docs/research-source-audit.md`](docs/research-source-audit.md): primary/authoritative pages fetched, metadata checked, supported claims, and limits.
+
+## Scope and integrity notes
+
+All current edits are on `arena/4447560a-lottery-scheduling-exercise`; the six existing `assignment-*` remote branches and `main` have not been edited in this continuation. No commit or push has been made for these uncommitted changes. The separate-branch arrangement requested earlier is therefore not complete in this session.
+
+The simulator and concurrency monitor are educational models. The Lottery seed output and EDF/RM trace are generated locally and are not presented as published results or production benchmarks. The actual assignment asks for six exercises; a prior supplemental dining-philosophers directory remains in the repository for continuity but is not included as a seventh requested assignment or in the six-exercise export manifest.
+
+The checked sources are cited in the assignment reference files. No claim that Claude AI authored or reviewed a report is made.

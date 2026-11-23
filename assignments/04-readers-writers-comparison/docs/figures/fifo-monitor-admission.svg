@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+<title id="title">FIFO reader writer monitor admission</title>
+<desc id="desc">A fair queue admits readers in a batch, then a queued writer, then readers behind that writer.</desc>
+<rect width="1200" height="560" fill="#F8FAFC"/>
+<text x="55" y="55" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" font-weight="700" fill="#14243A">Monitor admission: FIFO phases</text>
+<text x="55" y="88" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" fill="#64748B">Readers ahead of a writer form a batch; requests arriving behind it do not overtake it.</text>
+<text x="75" y="160" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="700" fill="#14243A">Queue order</text>
+<rect x="75" y="188" width="180" height="82" rx="16" fill="#4776A8"/><text x="165" y="225" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" fill="white">R1</text><text x="165" y="250" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="white">reader batch</text>
+<rect x="280" y="188" width="180" height="82" rx="16" fill="#4776A8"/><text x="370" y="225" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" fill="white">R2</text><text x="370" y="250" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="white">reader batch</text>
+<rect x="485" y="188" width="180" height="82" rx="16" fill="#DF6B63"/><text x="575" y="225" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" fill="white">W1</text><text x="575" y="250" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="white">exclusive</text>
+<rect x="690" y="188" width="180" height="82" rx="16" fill="#4776A8" opacity="0.48"/><text x="780" y="225" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" fill="#25364B">R3</text><text x="780" y="250" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#25364B">waits behind W1</text>
+<path d="M255 229 L280 229 M460 229 L485 229 M665 229 L690 229" stroke="#64748B" stroke-width="3"/>
+<text x="75" y="338" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="700" fill="#14243A">Admission timeline</text>
+<line x1="100" y1="430" x2="1080" y2="430" stroke="#64748B" stroke-width="3"/>
+<rect x="100" y="382" width="380" height="38" rx="10" fill="#4776A8"/><text x="290" y="408" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="700" fill="white">R1 + R2 read together</text>
+<rect x="480" y="382" width="310" height="38" rx="10" fill="#DF6B63"/><text x="635" y="408" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="700" fill="white">W1 writes exclusively</text>
+<rect x="790" y="382" width="290" height="38" rx="10" fill="#4776A8"/><text x="935" y="408" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="700" fill="white">R3 may read</text>
+<text x="600" y="500" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#64748B">Assumptions: finite critical sections and eventual scheduling of notified threads.</text>
+</svg>

@@ -1,0 +1,8 @@
+# Generated binary deliverables should not be treated as line-oriented text by Git.
+*.docx binary
+*.pdf binary
+*.pptx binary
+*.mp4 binary
+*.png binary
+*.jpg binary
+*.jpeg binary
