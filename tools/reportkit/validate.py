@@ -75,6 +75,20 @@ def check_persian_words(text, required=(), forbidden=()):
     return problems
 
 
+_MONO_STYLE = re.compile(r"Courier|Consolas|Mono|Code", re.I)
+
+
+def _docx_prose(xml: str) -> str:
+    """Strip code-listing paragraphs from a DOCX body, keep ordinary prose.
+
+    Listings use a monospaced run; dropping those paragraphs leaves the text that a reader
+    would actually call 'the document language'.
+    """
+    paras = re.findall(r"<w:p[ >].*?</w:p>", xml, flags=re.S)
+    kept = [p for p in paras if not _MONO_STYLE.search(p)]
+    return "".join(kept)
+
+
 def check_docx(path):
     problems = []
     try:
@@ -85,8 +99,11 @@ def check_docx(path):
             xml = z.read("word/document.xml").decode("utf-8", "replace")
             if "<w:tbl>" not in xml:
                 problems.append("no tables in DOCX")
-            has_arabic = bool(ARABIC.search(xml))
-            if has_arabic:
+            # Only body prose counts as "Persian text". A source-code listing may legitimately
+            # contain Persian letters (a test that feeds the parser "۰٫۲۵", a Persian "yes"), and
+            # that must not make the English edition look Persian.
+            body = _docx_prose(xml)
+            if ARABIC.search(body):
                 # Persian edition must carry explicit RTL paragraph markers
                 if "w:bidi" not in xml:
                     problems.append("Persian DOCX has no RTL (w:bidi) markers")

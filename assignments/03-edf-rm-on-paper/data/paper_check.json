@@ -1,0 +1,93 @@
+{
+ "tasks": [
+  {
+   "name": "P1",
+   "T": 4,
+   "C": 1,
+   "D": 4,
+   "U": 0.25
+  },
+  {
+   "name": "P2",
+   "T": 6,
+   "C": 2,
+   "D": 6,
+   "U": 0.333333
+  },
+  {
+   "name": "P3",
+   "T": 8,
+   "C": 3,
+   "D": 8,
+   "U": 0.375
+  }
+ ],
+ "hyperperiod": 24,
+ "utilisation": 0.958333,
+ "rm_bound": 0.779763,
+ "above_bound": true,
+ "rta": {
+  "P1": {
+   "C": 1,
+   "T": 4,
+   "R": 1,
+   "feasible": true
+  },
+  "P2": {
+   "C": 2,
+   "T": 6,
+   "R": 3,
+   "feasible": true
+  },
+  "P3": {
+   "C": 3,
+   "T": 8,
+   "R": null,
+   "feasible": false
+  }
+ },
+ "rm_feasible": false,
+ "edf_feasible": true,
+ "worst_deficit": {
+  "L": 1,
+  "deficit": -1
+ },
+ "schedules": [
+  {
+   "algorithm": "rm",
+   "horizon": 24,
+   "expect": "miss",
+   "rows": {
+    "P1": "#...#...#...#...#...#...",
+    "P2": ".##...##.....##...##....",
+    "P3": "...#.#...###.....#...##."
+   },
+   "problems": [],
+   "ok": true,
+   "served": {
+    "P1": 6,
+    "P2": 8,
+    "P3": 8
+   }
+  },
+  {
+   "algorithm": "edf",
+   "horizon": 24,
+   "expect": "ok",
+   "rows": {
+    "P1": "#.....#..#...#..#.....#.",
+    "P2": ".##....##.....##....##..",
+    "P3": "...###....###....###...."
+   },
+   "problems": [],
+   "ok": true,
+   "served": {
+    "P1": 6,
+    "P2": 8,
+    "P3": 9
+   }
+  }
+ ],
+ "calc_problems": [],
+ "ok": true
+}

@@ -1,0 +1,9 @@
+tasks: 3   hyperperiod: 24   U = 0.9583
+RM bound: 0.7798   above bound: True
+  R(P1) = 1   deadline 4   OK
+  R(P2) = 3   deadline 6   OK
+  R(P3) = None   deadline 8   MISS
+RM feasible: False   EDF feasible: True
+  hand-drawn rm: OK
+  hand-drawn edf: OK
+hand calculations: all match the analyser

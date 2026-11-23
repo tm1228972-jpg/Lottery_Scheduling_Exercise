@@ -1,0 +1,43 @@
+test_collision_detected (__main__.TestChecker.test_collision_detected) ... ok
+test_correct_schedule_passes (__main__.TestChecker.test_correct_schedule_passes) ... ok
+test_declared_miss_but_perfect_is_flagged (__main__.TestChecker.test_declared_miss_but_perfect_is_flagged) ... ok
+test_declared_miss_is_accepted (__main__.TestChecker.test_declared_miss_is_accepted) ... ok
+test_impossible_service_detected (__main__.TestChecker.test_impossible_service_detected)
+A process cannot run more ticks than its jobs can consume. ... ok
+test_missed_deadline_detected (__main__.TestChecker.test_missed_deadline_detected) ... ok
+test_missing_row (__main__.TestChecker.test_missing_row) ... ok
+test_short_row_is_padded (__main__.TestChecker.test_short_row_is_padded) ... ok
+test_unknown_symbol (__main__.TestChecker.test_unknown_symbol) ... ok
+test_correct_utilisation_accepted (__main__.TestHandCalcs.test_correct_utilisation_accepted) ... ok
+test_persian_decimal_separator (__main__.TestHandCalcs.test_persian_decimal_separator) ... ok
+test_unknown_calc_flagged (__main__.TestHandCalcs.test_unknown_calc_flagged) ... ok
+test_wrong_response_time_flagged (__main__.TestHandCalcs.test_wrong_response_time_flagged) ... ok
+test_wrong_utilisation_flagged (__main__.TestHandCalcs.test_wrong_utilisation_flagged) ... ok
+test_matches_assignment2_simulator (__main__.TestIndependentCrossCheck.test_matches_assignment2_simulator) ... ok
+test_comments_and_blank_lines (__main__.TestMarkup.test_comments_and_blank_lines) ... ok
+test_empty_workbook_rejected (__main__.TestMarkup.test_empty_workbook_rejected) ... ok
+test_expect_miss_flag (__main__.TestMarkup.test_expect_miss_flag) ... ok
+test_hash_is_a_run_marker_not_a_comment (__main__.TestMarkup.test_hash_is_a_run_marker_not_a_comment) ... ok
+test_parse_minimal (__main__.TestMarkup.test_parse_minimal) ... ok
+test_pipes_are_ignored (__main__.TestMarkup.test_pipes_are_ignored) ... ok
+test_default_deadline (__main__.TestModel.test_default_deadline) ... ok
+test_hyperperiod (__main__.TestModel.test_hyperperiod) ... ok
+test_task_validation (__main__.TestModel.test_task_validation) ... ok
+test_utilisation (__main__.TestModel.test_utilisation) ... ok
+test_rm_answer_is_minimal (__main__.TestShippedAnswer.test_rm_answer_is_minimal)
+RM must serve P3 only twice before its first deadline - that IS the finding. ... ok
+test_shipped_schedules_are_complete (__main__.TestShippedAnswer.test_shipped_schedules_are_complete) ... ok
+test_shipped_workbook_ok (__main__.TestShippedAnswer.test_shipped_workbook_ok) ... ok
+test_dbf (__main__.TestTheory.test_dbf) ... ok
+test_edf_feasible_above_rm_bound (__main__.TestTheory.test_edf_feasible_above_rm_bound)
+The whole point of the assignment: feasible for EDF, not for RM. ... ok
+test_edf_infeasible (__main__.TestTheory.test_edf_infeasible) ... ok
+test_response_time_infeasible (__main__.TestTheory.test_response_time_infeasible) ... ok
+test_response_times (__main__.TestTheory.test_response_times) ... ok
+test_rm_bound (__main__.TestTheory.test_rm_bound) ... ok
+test_worst_deficit_positive_when_infeasible (__main__.TestTheory.test_worst_deficit_positive_when_infeasible) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 0.004s
+
+OK

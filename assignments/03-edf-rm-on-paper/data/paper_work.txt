@@ -1,0 +1,37 @@
+; Assignment 3 - three processes, scheduled by hand with RM and EDF
+; Row alphabet: '#' = the process runs in that tick, '.' = it does not.
+title Three periodic processes scheduled on paper
+
+; ---- Process set (given in the brief) --------------------------------------
+task P1 T=4 C=1
+task P2 T=6 C=2
+task P3 T=8 C=3
+
+; ---- Answer 1: RM, fixed priority P1 > P2 > P3 ------------------------------
+; Drawn by hand on graph paper, then transcribed tick by tick.
+; P3's first job needs 3 ticks but only gets 2 before its deadline: RM misses.
+draw rm expect=miss
+P1  #...#...#...#...#...#...
+P2  .##...##.....##...##....
+P3  ...#.#...###.....#...##.
+end
+
+; ---- Answer 2: EDF, dynamic priority ---------------------------------------
+; Same task set, earliest absolute deadline first: every job meets its deadline.
+; Tie-break, applied consistently everywhere: when two ready jobs share the same
+; absolute deadline, keep running the one that is already running (non-preemptive
+; on a tie). This is a free choice in EDF, but it must be stated.
+; Ties: tick 4 (P1 and P3 both due at 8), tick 7 (P1 and P3 both due at 12),
+;       tick 20 (P2 and P3 both due at 24).
+draw edf
+P1  #.....#..#...#..#.....#.
+P2  .##....##.....##....##..
+P3  ...###....###....###....
+end
+
+; ---- Hand calculations ------------------------------------------------------
+calc U 0.958
+calc R(P1) 1
+calc R(P2) 3
+calc rm_bound 0.780
+calc dbf_ok yes
